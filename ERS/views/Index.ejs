@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Feedback App</title>
+</head>
+<body>
+    <h1>Employee Feedback App</h1>
+    
+    <h2>Submit Feedback</h2>
+    <form action="/submit-feedback" method="post">
+        <label for="sender">Sender:</label>
+        <input type="text" name="sender" required><br>
+        <label for="receiver">Receiver:</label>
+        <input type="text" name="receiver" required><br>
+        <label for="feedback">Feedback:</label><br>
+        <textarea name="feedback" rows="4" cols="50" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Feedback List</h2>
+    <ul>
+        <% feedbackData.forEach(feedback => { %>
+            <li>
+                <strong>Sender:</strong> <%= feedback.sender %><br>
+                <strong>Receiver:</strong> <%= feedback.receiver %><br>
+                <strong>Feedback:</strong> <%= feedback.feedback %><br>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
