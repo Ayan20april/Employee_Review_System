@@ -7,6 +7,9 @@
     <h1>Employee Feedback App</h1>
     
     <h2>Submit Feedback</h2>
+
+    //The form's action attribute is set to '/submit-feedback', 
+    //which corresponds to the route defined in index.js.
     <form action="/submit-feedback" method="post">
         <label for="sender">Sender:</label>
         <input type="text" name="sender" required><br>
@@ -21,6 +24,10 @@
     <ul>
         <% feedbackData.forEach(feedback => { %>
             <li>
+                //This EJS tag interpolates the value of 'feedback.sender' into the HTML, 
+                //dynamically populating the sender's name in the list item.
+                //Similarly, 'feedback.receiver' and 'feedback.feedback' interpolate the receiver and 
+                //feedback content, respectively.
                 <strong>Sender:</strong> <%= feedback.sender %><br>
                 <strong>Receiver:</strong> <%= feedback.receiver %><br>
                 <strong>Feedback:</strong> <%= feedback.feedback %><br>
